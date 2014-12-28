@@ -46,12 +46,16 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.enemyShadowSize = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label2 = new System.Windows.Forms.Label();
             this.xpMultBox = new System.Windows.Forms.TextBox();
-            this.questButton = new System.Windows.Forms.Button();
+            this.isQuest = new System.Windows.Forms.Button();
+            this.godKill = new System.Windows.Forms.Button();
+            this.stasisImmune = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.questLevel = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // enemyDefense
@@ -151,9 +155,9 @@
             // TriggerTexture
             // 
             this.TriggerTexture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.TriggerTexture.Location = new System.Drawing.Point(174, 21);
+            this.TriggerTexture.Location = new System.Drawing.Point(164, 24);
             this.TriggerTexture.Name = "TriggerTexture";
-            this.TriggerTexture.Size = new System.Drawing.Size(80, 23);
+            this.TriggerTexture.Size = new System.Drawing.Size(94, 23);
             this.TriggerTexture.TabIndex = 242;
             this.TriggerTexture.Text = "Remote";
             this.TriggerTexture.UseVisualStyleBackColor = true;
@@ -204,18 +208,18 @@
             this.label1.TabIndex = 251;
             this.label1.Text = "Shadow Size";
             // 
-            // textBox1
+            // enemyShadowSize
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 221);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 252;
+            this.enemyShadowSize.Location = new System.Drawing.Point(85, 221);
+            this.enemyShadowSize.Name = "enemyShadowSize";
+            this.enemyShadowSize.Size = new System.Drawing.Size(129, 20);
+            this.enemyShadowSize.TabIndex = 252;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(147, 469);
+            this.button1.Location = new System.Drawing.Point(160, 289);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 23);
+            this.button1.Size = new System.Drawing.Size(94, 23);
             this.button1.TabIndex = 253;
             this.button1.Text = "Create Enemy";
             this.button1.UseVisualStyleBackColor = true;
@@ -237,27 +241,67 @@
             this.xpMultBox.Size = new System.Drawing.Size(129, 20);
             this.xpMultBox.TabIndex = 257;
             // 
-            // questButton
+            // isQuest
             // 
-            this.questButton.Location = new System.Drawing.Point(261, 124);
-            this.questButton.Name = "questButton";
-            this.questButton.Size = new System.Drawing.Size(75, 23);
-            this.questButton.TabIndex = 258;
-            this.questButton.Text = "Quest?";
-            this.questButton.UseVisualStyleBackColor = true;
-            this.questButton.Click += new System.EventHandler(this.questButton_Click);
+            this.isQuest.Location = new System.Drawing.Point(261, 124);
+            this.isQuest.Name = "isQuest";
+            this.isQuest.Size = new System.Drawing.Size(93, 23);
+            this.isQuest.TabIndex = 258;
+            this.isQuest.Text = "Quest?";
+            this.isQuest.UseVisualStyleBackColor = true;
+            this.isQuest.Click += new System.EventHandler(this.questButton_Click);
+            // 
+            // godKill
+            // 
+            this.godKill.Location = new System.Drawing.Point(261, 154);
+            this.godKill.Name = "godKill";
+            this.godKill.Size = new System.Drawing.Size(93, 23);
+            this.godKill.TabIndex = 259;
+            this.godKill.Text = "God Kill?";
+            this.godKill.UseVisualStyleBackColor = true;
+            this.godKill.Click += new System.EventHandler(this.godKill_Click);
+            // 
+            // stasisImmune
+            // 
+            this.stasisImmune.Location = new System.Drawing.Point(261, 187);
+            this.stasisImmune.Name = "stasisImmune";
+            this.stasisImmune.Size = new System.Drawing.Size(93, 23);
+            this.stasisImmune.TabIndex = 260;
+            this.stasisImmune.Text = "Stasis Immune?";
+            this.stasisImmune.UseVisualStyleBackColor = true;
+            this.stasisImmune.Click += new System.EventHandler(this.stasisImmune_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(249, 224);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 13);
+            this.label6.TabIndex = 261;
+            this.label6.Text = "What level to see quest";
+            // 
+            // questLevel
+            // 
+            this.questLevel.Location = new System.Drawing.Point(252, 255);
+            this.questLevel.Name = "questLevel";
+            this.questLevel.Size = new System.Drawing.Size(116, 20);
+            this.questLevel.TabIndex = 262;
             // 
             // EnemyCreatorGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(406, 504);
-            this.Controls.Add(this.questButton);
+            this.ClientSize = new System.Drawing.Size(406, 324);
+            this.Controls.Add(this.questLevel);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.stasisImmune);
+            this.Controls.Add(this.godKill);
+            this.Controls.Add(this.isQuest);
             this.Controls.Add(this.xpMultBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.enemyShadowSize);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.enemyDefense);
             this.Controls.Add(this.label20);
@@ -304,12 +348,16 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox enemyShadowSize;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox xpMultBox;
-        private System.Windows.Forms.Button questButton;
+        private System.Windows.Forms.Button isQuest;
+        private System.Windows.Forms.Button godKill;
+        private System.Windows.Forms.Button stasisImmune;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox questLevel;
     }
 }
 

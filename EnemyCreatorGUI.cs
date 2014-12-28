@@ -31,20 +31,30 @@ namespace Enemy_Creator
         public static string size { get; set; }
         public static string maxHp { get; set; }
         public static string defense { get; set; }
-        public bool quest { get; set; }
         public static string shadowSize { get; set; }
-        public static string folderPath { get; set; }
+        public static string levelForQuest { get; set; }
         #endregion
 
+        #region Conditional Logic Questions
         public static bool dialogQuest;
+        public static bool dialogGod;
+        public static bool dialogImmune;
+        #endregion
 
         private void button1_Click_1 (object sender, EventArgs e)
         {
-            
+            name = enemyName.Text;
+            id = enemyId.Text;
+            file = textureFile.Text;
+            index1 = index.Text;
+            remotetexture = remoteTexture.Text;
             size = enemySize.Text;
+            maxHp = enemyMaxHp.Text;
+            defense = enemyDefense.Text;
+            shadowSize = enemyShadowSize.Text;
+            levelForQuest = questLevel.Text;
             EnemyExecute();
         }
-
         public static void EnemyExecute()
         {
             using (var writer = new StreamWriter("Enemy XML.txt", true))
@@ -59,10 +69,34 @@ namespace Enemy_Creator
                 writer.WriteLine("<Defense>" + defense + "</Defense>");
                 writer.WriteLine("<ShadowSize>" + shadowSize + "</ShadowSize>");
                 writer.WriteLine("");
+
                 if (dialogQuest == true)
                 {
                     writer.WriteLine("<Quest />");
                 }
+                else
+                {
+                    //
+                }
+
+                if (dialogGod == true)
+                {
+                    writer.WriteLine("<God />");
+                }
+                else
+                {
+                    //
+                }
+
+                if (dialogImmune == true)
+                {
+                    writer.WriteLine("<StasisImmune />");
+                }
+                else
+                {
+                    //
+                }
+                writer.WriteLine("<Level>" + levelForQuest + "</Level>");
             }
         }
         private void enemyQuest_CheckedChanged(object sender, EventArgs e)
@@ -99,6 +133,36 @@ namespace Enemy_Creator
             if (result1 == DialogResult.Yes)
             {
                 dialogQuest = true;
+            }
+            else
+            {
+                dialogQuest = false;
+            }
+        }
+
+        private void godKill_Click(object sender, EventArgs e)
+        {
+            DialogResult result2 = MessageBox.Show("Do you want your enemy to count as a god kill?", "God Kill", MessageBoxButtons.YesNo);
+            if (result2 == DialogResult.Yes)
+            {
+                dialogGod = true;
+            }
+            else
+            {
+                dialogGod = false;
+            }
+        }
+
+        private void stasisImmune_Click(object sender, EventArgs e)
+        {
+            DialogResult result3 = MessageBox.Show("Do you want your enemy to be Stasis Immune?", "Stasis Immune", MessageBoxButtons.YesNo);
+            if (result3 == DialogResult.Yes)
+            {
+                dialogImmune = true;
+            }
+            else
+            {
+                dialogImmune = false;
             }
         }
     }
