@@ -1,0 +1,9 @@
+C:\Users\Bailey\Documents\Visual Studio 2012\Projects\Enemy Creator\Enemy Creator\bin\Debug\Enemy Creator.exe.config
+C:\Users\Bailey\Documents\Visual Studio 2012\Projects\Enemy Creator\Enemy Creator\bin\Debug\Enemy Creator.exe
+C:\Users\Bailey\Documents\Visual Studio 2012\Projects\Enemy Creator\Enemy Creator\bin\Debug\Enemy Creator.pdb
+C:\Users\Bailey\Documents\Visual Studio 2012\Projects\Enemy Creator\Enemy Creator\obj\Debug\Enemy Creator.csprojResolveAssemblyReference.cache
+C:\Users\Bailey\Documents\Visual Studio 2012\Projects\Enemy Creator\Enemy Creator\obj\Debug\Enemy_Creator.EnemyCreatorGUI.resources
+C:\Users\Bailey\Documents\Visual Studio 2012\Projects\Enemy Creator\Enemy Creator\obj\Debug\Enemy_Creator.Properties.Resources.resources
+C:\Users\Bailey\Documents\Visual Studio 2012\Projects\Enemy Creator\Enemy Creator\obj\Debug\Enemy Creator.csproj.GenerateResource.Cache
+C:\Users\Bailey\Documents\Visual Studio 2012\Projects\Enemy Creator\Enemy Creator\obj\Debug\Enemy Creator.exe
+C:\Users\Bailey\Documents\Visual Studio 2012\Projects\Enemy Creator\Enemy Creator\obj\Debug\Enemy Creator.pdb
