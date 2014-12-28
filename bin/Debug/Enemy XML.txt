@@ -1,0 +1,25 @@
+<Object type="gg" id="gg">
+<Enemy />
+<AnimatedTexture>
+<File></File><Index></Index>
+<AnimatedTexture>
+<Size></Size>
+<MaxHitPoints></MaxHitPoints>
+<Defense></Defense>
+<ShadowSize></ShadowSize>
+
+<Quest />
+<Level></Level>
+<Object type="gg" id="gg">
+<Enemy />
+<AnimatedTexture>
+<File></File><Index></Index>
+<AnimatedTexture>
+<Size></Size>
+<MaxHitPoints></MaxHitPoints>
+<Defense></Defense>
+<ShadowSize></ShadowSize>
+
+<Quest />
+<God />
+<Level>1</Level>
