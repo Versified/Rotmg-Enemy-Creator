@@ -19,84 +19,72 @@ namespace Enemy_Creator
         }
 
         #region Just some strings ;D
-        public static string name { get; set; }
-        public static string id { get; set; }
-        public static string file { get; set; }
-        public static string index1 { get; set; }
-        public static bool remote { get; set; }
-        public static string remotetexture { get; set; }
+        public string Name { get; set; }
+        public string Id { get; set; }
+        public string File { get; set; }
+        public string Index1 { get; set; }
+        public bool Remote { get; set; }
+        public string Remotetexture { get; set; }
         #endregion
 
         #region Enemy strings
-        public static string size { get; set; }
-        public static string maxHp { get; set; }
-        public static string defense { get; set; }
-        public static string shadowSize { get; set; }
-        public static string levelForQuest { get; set; }
+        public string Size { get; set; }
+        public string MaxHp { get; set; }
+        public string Defense { get; set; }
+        public string ShadowSize { get; set; }
+        public string LevelForQuest { get; set; }
         #endregion
 
         #region Conditional Logic Questions
-        public static bool dialogQuest;
-        public static bool dialogGod;
-        public static bool dialogImmune;
+        public bool DialogQuest;
+        public bool DialogGod;
+        public bool DialogImmune;
         #endregion
 
         private void button1_Click_1 (object sender, EventArgs e)
         {
-            name = enemyName.Text;
-            id = enemyId.Text;
-            file = textureFile.Text;
-            index1 = index.Text;
-            remotetexture = remoteTexture.Text;
-            size = enemySize.Text;
-            maxHp = enemyMaxHp.Text;
-            defense = enemyDefense.Text;
-            shadowSize = enemyShadowSize.Text;
-            levelForQuest = questLevel.Text;
+            Name = enemyName.Text;
+            Id = enemyId.Text;
+            File = textureFile.Text;
+            Index1 = index.Text;
+            Remotetexture = remoteTexture.Text;
+            Size = enemySize.Text;
+            MaxHp = enemyMaxHp.Text;
+            Defense = enemyDefense.Text;
+            ShadowSize = enemyShadowSize.Text;
+            LevelForQuest = questLevel.Text;
             EnemyExecute();
         }
-        public static void EnemyExecute()
+        public void EnemyExecute()
         {
             using (var writer = new StreamWriter("Enemy XML.txt", true))
             {
-                writer.WriteLine(@"<Object type=""" + id + @""" id=""" + name + @""">");
+                writer.WriteLine(@"<Object type=""" + Id + @""" id=""" + Name + @""">");
                 writer.WriteLine("<Enemy />");
                 writer.WriteLine("<AnimatedTexture>");
-                writer.WriteLine("<File>" + file + "</File><Index>" + index1 + "</Index>");
+                writer.WriteLine("<File>" + File + "</File><Index>" + Index1 + "</Index>");
                 writer.WriteLine("<AnimatedTexture>");
-                writer.WriteLine("<Size>" + size + "</Size>");
-                writer.WriteLine("<MaxHitPoints>" + maxHp + "</MaxHitPoints>");
-                writer.WriteLine("<Defense>" + defense + "</Defense>");
-                writer.WriteLine("<ShadowSize>" + shadowSize + "</ShadowSize>");
+                writer.WriteLine("<Size>" + Size + "</Size>");
+                writer.WriteLine("<MaxHitPoints>" + MaxHp + "</MaxHitPoints>");
+                writer.WriteLine("<Defense>" + Defense + "</Defense>");
+                writer.WriteLine("<ShadowSize>" + ShadowSize + "</ShadowSize>");
                 writer.WriteLine("");
 
-                if (dialogQuest == true)
+                if (DialogQuest == true)
                 {
                     writer.WriteLine("<Quest />");
                 }
-                else
-                {
-                    //
-                }
 
-                if (dialogGod == true)
+                if (DialogGod == true)
                 {
                     writer.WriteLine("<God />");
                 }
-                else
-                {
-                    //
-                }
 
-                if (dialogImmune == true)
+                if (DialogImmune == true)
                 {
                     writer.WriteLine("<StasisImmune />");
                 }
-                else
-                {
-                    //
-                }
-                writer.WriteLine("<Level>" + levelForQuest + "</Level>");
+                writer.WriteLine("<Level>" + LevelForQuest + "</Level>");
             }
         }
         private void enemyQuest_CheckedChanged(object sender, EventArgs e)
@@ -132,11 +120,11 @@ namespace Enemy_Creator
             DialogResult result1 = MessageBox.Show("Do you want your enemy to be a quest?", "Quest", MessageBoxButtons.YesNo);
             if (result1 == DialogResult.Yes)
             {
-                dialogQuest = true;
+                DialogQuest = true;
             }
             else
             {
-                dialogQuest = false;
+                DialogQuest = false;
             }
         }
 
@@ -145,11 +133,11 @@ namespace Enemy_Creator
             DialogResult result2 = MessageBox.Show("Do you want your enemy to count as a god kill?", "God Kill", MessageBoxButtons.YesNo);
             if (result2 == DialogResult.Yes)
             {
-                dialogGod = true;
+                DialogGod = true;
             }
             else
             {
-                dialogGod = false;
+                DialogGod = false;
             }
         }
 
@@ -158,11 +146,11 @@ namespace Enemy_Creator
             DialogResult result3 = MessageBox.Show("Do you want your enemy to be Stasis Immune?", "Stasis Immune", MessageBoxButtons.YesNo);
             if (result3 == DialogResult.Yes)
             {
-                dialogImmune = true;
+                DialogImmune = true;
             }
             else
             {
-                dialogImmune = false;
+                DialogImmune = false;
             }
         }
     }
